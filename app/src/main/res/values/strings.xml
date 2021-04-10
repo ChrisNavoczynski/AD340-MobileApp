@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+    <string name="title">Hello World</string>
+    <string name="name_year">Chris Navoczynski: 4.9.2021</string>
+    <string name="futuremenu">FutureMenu</string>
+</resources>
