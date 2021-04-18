@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/background"
+        tools:context=".SignInActivity">
+
+        <TextView
+            android:id="@+id/SignedIn"
+            android:layout_width="361dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/aclonica"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/successful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="50dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/sign_in_successful"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="19sp" />
+
+        <Button
+            android:id="@+id/goback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/btn_custom"
+            android:fontFamily="sans-serif"
+            android:text="@string/go_back"
+            android:textSize="20sp"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+</ScrollView>

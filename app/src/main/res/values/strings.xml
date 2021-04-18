@@ -1,6 +1,18 @@
 <resources>
-    <string name="app_name">HelloWorld</string>
-    <string name="title">Hello World</string>
-    <string name="name_year">Chris Navoczynski: 4.9.2021</string>
+    <string name="app_name">Welcome!</string>
+    <string name="title">Please Sign In!</string>
+    <string name="name_year">Navoczynski, Chris: 4.16.2021</string>
     <string name="futuremenu">FutureMenu</string>
+    <string name="d_o_b">Date of Birth MM/DD/YYYY</string>
+    <string name="get_date">Get Date</string>
+    <string name="user_name">User Name</string>
+    <string name="email">Email</string>
+    <string name="full_name">Full Name</string>
+    <string name="subtitle">Please Sign In</string>
+    <string name="signin_title">Welcome!</string>
+    <string name="sign_in_successful">Sign In Successful</string>
+    <string name="go_back">Go Back</string>
+    <string name="goToSubmit">Submit</string>
+    <string name="month_day_year">%d/%d/%d</string>
+
 </resources>
