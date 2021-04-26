@@ -35,6 +35,7 @@
     <string name="seeking_id">\seeking: \</string>
     <string name="occupation_stat">\Occupation:  \</string>
     <string name="about_me">About Me:</string>
+    <string name="your_profile">Your Profile</string>
     <string-array name="select_gender">
         <item>Male</item>
         <item>Female</item>
