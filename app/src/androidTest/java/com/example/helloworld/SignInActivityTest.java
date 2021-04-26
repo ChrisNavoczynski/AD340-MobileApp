@@ -21,11 +21,5 @@ public class SignInActivityTest {
     public ActivityScenarioRule<SignInActivity> activityTestRule
             = new ActivityScenarioRule<>(SignInActivity.class);
 
-    @Test
-    public void hasTextOnScreen() {
-
-        onView(withId(R.id.successful))
-                .check(matches(withText(R.string.sign_in_successful)));
-    }
 
 }

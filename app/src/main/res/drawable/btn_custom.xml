@@ -7,7 +7,7 @@
         android:color="@color/black"
         />
 
-    <solid android:color="@color/p_dark" />
+    <solid android:color="@color/p_light" />
 
     <corners
         android:bottomLeftRadius="5dp"

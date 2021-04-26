@@ -40,6 +40,7 @@ public class Validation {
         if (dateParts.length == 3) {
             String year = dateParts[2];
             int curYear = Calendar.getInstance().get(Calendar.YEAR);
+            int findAge = curYear - parseInt(year);
             // clearing the error, if it was previously set by some other values
             editText.setError(null);
 
@@ -47,12 +48,26 @@ public class Validation {
             if ( required && !hasText(editText) ) return false;
 
             // pattern doesn't match so returning false
-            if (required && (curYear - parseInt(year) < 18)) {
+            if (required && (findAge < 18)) {
                 editText.setError(errMsg);
                 return false;
             };
         }
         return true;
+    }
+
+    public static String calculateAge(EditText editText) {
+
+        String text = editText.getText().toString().trim();
+        String [] dateParts = text.split("/");
+        int findAge = 0;
+
+        if (dateParts.length == 3) {
+            String year = dateParts[2];
+            int curYear = Calendar.getInstance().get(Calendar.YEAR);
+            findAge = curYear - parseInt(year);
+        }
+        return Integer.toString(findAge);
     }
 
     // check the input field has any text or not

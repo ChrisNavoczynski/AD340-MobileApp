@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name=".SignInActivity"
-            android:label="SignedIn">
+            android:label="YourProfile">
         </activity>
 
         <meta-data

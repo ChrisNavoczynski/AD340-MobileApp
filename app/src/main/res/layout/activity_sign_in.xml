@@ -5,36 +5,122 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/background"
         tools:context=".SignInActivity">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/love" />
+
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_toEndOf="@id/SignedIn"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/profilePic"
+            android:src="@drawable/dog" />
 
         <TextView
             android:id="@+id/SignedIn"
-            android:layout_width="361dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="2dp"
             android:fontFamily="@font/aclonica"
-            android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="35sp" />
+            android:textAlignment="center"
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/successful"
-            android:layout_width="wrap_content"
+            android:id="@+id/age"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="50dp"
-            android:fontFamily="sans-serif"
-            android:text="@string/sign_in_successful"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_below="@id/SignedIn"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="19sp" />
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/identified_as"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@id/age"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/seeking"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@id/identified_as"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/occupation"
+            android:layout_width="391dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profilePic"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:textAlignment="inherit"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/descript_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@id/occupation"
+            android:text="@string/about_me"
+            android:textAlignment="inherit"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_below="@id/descript_title"
+            android:text="@string/about_me"
+            android:textAlignment="inherit"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/goback"
@@ -44,11 +130,13 @@
             android:layout_marginLeft="80dp"
             android:layout_marginRight="80dp"
             android:layout_marginBottom="30dp"
+            android:layout_below="@id/about"
             android:background="@drawable/btn_custom"
             android:fontFamily="sans-serif"
             android:text="@string/go_back"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:textColor="@android:color/black" />
 
-    </LinearLayout>
+    </RelativeLayout>
 </ScrollView>
