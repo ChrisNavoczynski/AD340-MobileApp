@@ -21,5 +21,21 @@ public class SignInActivityTest {
     public ActivityScenarioRule<SignInActivity> activityTestRule
             = new ActivityScenarioRule<>(SignInActivity.class);
 
+    @Test
+    public void hasTextOnScreen() {
+        onView(withId(R.id.SignedIn))
+                .check(matches(withText(R.string.thanks_signed_in)));
+        onView(withId(R.id.age))
+                .check(matches(withText(R.string.show_age)));
+        onView(withId(R.id.identified_as))
+                .check(matches(withText(R.string.identify_as)));
+        onView(withId(R.id.seeking))
+                .check(matches(withText(R.string.seeking_id)));
+        onView(withId(R.id.occupation))
+                .check(matches(withText(R.string.occupation_stat)));
+        onView(withId(R.id.descript_title))
+                .check(matches(withText(R.string.about_me)));
 
+    }
+    
 }

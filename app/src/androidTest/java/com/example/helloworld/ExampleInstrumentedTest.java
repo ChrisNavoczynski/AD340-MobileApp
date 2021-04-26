@@ -37,19 +37,5 @@ public class ExampleInstrumentedTest {
         assertEquals("com.example.helloworld", appContext.getPackageName());
     }
 
-    @Test
-    public void iterateSpinnerItems() {
-        String[] myArray = mActivityRule.getActivity().getResources()
-                    .getStringArray(R.array.select_gender);
-
-            int size = myArray.length;
-            for (int i=0; i<size; i++) {
-                onView(withId(R.id.gender)).perform(click());
-                onData(is(myArray[i])).perform(click());
-                onView(withId(R.id.btn_submit)).perform(click());
-                onView(withId(R.id.identified_as))
-                        .check(matches(withText(containsString(myArray[i]))));
-            }
-    }
 }
 
