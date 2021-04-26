@@ -23,8 +23,6 @@ public class SignInActivityTest {
 
     @Test
     public void hasTextOnScreen() {
-        onView(withId(R.id.SignedIn))
-                .check(matches(withText(R.string.thanks_signed_in)));
         onView(withId(R.id.age))
                 .check(matches(withText(R.string.show_age)));
         onView(withId(R.id.identified_as))
@@ -37,5 +35,5 @@ public class SignInActivityTest {
                 .check(matches(withText(R.string.about_me)));
 
     }
-    
+
 }
