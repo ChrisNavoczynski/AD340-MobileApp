@@ -7,30 +7,6 @@ import static java.lang.Integer.parseInt;
 
 public class Validation {
 
-    // call this method when you need to check email validation
-    public static boolean isEmailAddress(EditText editText, boolean required) {
-        return isValid(editText, Constants.EMAIL_REGEX, Constants.EMAIL_MSG, required);
-    }
-
-    // return true if the input field is valid, based on the parameter passed
-    public static boolean isValid(EditText editText, String regex, String errMsg, boolean required) {
-
-        String text = editText.getText().toString().trim();
-        // clearing the error, if it was previously set by some other values
-        editText.setError(null);
-
-        // text required and editText is blank, so return false
-        if ( required && !hasText(editText) ) return false;
-
-        // pattern doesn't match so returning false
-        if (required && !Pattern.matches(regex, text)) {
-            editText.setError(errMsg);
-            return false;
-        };
-
-        return true;
-    }
-
     // return true if the input field is valid, based on the parameter passed
     public static boolean isValidAge(EditText editText, String errMsg, boolean required) {
 

@@ -10,6 +10,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.Calendar;
+
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.scrollTo;
@@ -61,11 +63,6 @@ public class MainActivityTest {
 
         onView(withId(R.id.et_name)).check(matches(withText("Jasper Doggo")));
         onView(withId(R.id.occupation)).check(matches(withText("Best dog around")));
-    }
-
-    @Test
-    public void activitySwitchOnButton() {
-        onView(withId(R.id.btn_submit)).perform(click());
     }
 }
 
