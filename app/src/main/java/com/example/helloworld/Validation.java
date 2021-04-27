@@ -1,7 +1,6 @@
 package com.example.helloworld;
 
 import android.widget.EditText;
-import java.util.regex.Pattern;
 import java.util.Calendar;
 import static java.lang.Integer.parseInt;
 

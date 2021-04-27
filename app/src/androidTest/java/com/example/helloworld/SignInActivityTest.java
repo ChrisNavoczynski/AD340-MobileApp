@@ -1,5 +1,4 @@
 package com.example.helloworld;
-
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
