@@ -29,7 +29,7 @@
 
         <TextView
             android:id="@+id/SignedIn"
-            android:layout_width="@dimen/signIn"
+            android:layout_width="@dimen/pRet_width"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp5_marg"
             android:layout_marginEnd="@dimen/dp30_marg"
@@ -42,7 +42,7 @@
 
         <TextView
             android:id="@+id/age"
-            android:layout_width="@dimen/age"
+            android:layout_width="@dimen/pRet_width"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp5_marg"
             android:layout_marginEnd="@dimen/dp30_marg"
@@ -56,7 +56,7 @@
 
         <TextView
             android:id="@+id/identified_as"
-            android:layout_width="@dimen/id_as"
+            android:layout_width="@dimen/pRet_width"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp5_marg"
             android:layout_marginEnd="@dimen/dp30_marg"
@@ -69,7 +69,7 @@
 
         <TextView
             android:id="@+id/seeking"
-            android:layout_width="@dimen/seeking"
+            android:layout_width="@dimen/pRet_width"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp5_marg"
             android:layout_marginEnd="@dimen/dp30_marg"
@@ -82,7 +82,7 @@
 
         <TextView
             android:id="@+id/occupation"
-            android:layout_width="@dimen/job"
+            android:layout_width="@dimen/job_width"
             android:layout_height="wrap_content"
             android:layout_below="@id/profilePic"
             android:layout_marginStart="@dimen/dp20_marg"

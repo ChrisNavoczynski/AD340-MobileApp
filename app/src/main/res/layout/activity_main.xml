@@ -45,7 +45,7 @@
         <EditText
             android:id="@+id/et_name"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/name_height"
+            android:layout_height="@dimen/form_h"
             android:layout_marginLeft="@dimen/dp20_marg"
             android:layout_marginRight="@dimen/dp20_marg"
             android:layout_marginBottom="@dimen/dp10_marg"
@@ -60,7 +60,7 @@
         <EditText
             android:id="@+id/dobtext"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dobtext"
+            android:layout_height="@dimen/form_h"
             android:layout_marginLeft="@dimen/dp20_marg"
             android:layout_marginRight="@dimen/dp20_marg"
             android:layout_marginBottom="@dimen/dp10_marg"
@@ -130,7 +130,7 @@
         <EditText
             android:id="@+id/occupation"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/occ_text"
+            android:layout_height="@dimen/form_h"
             android:layout_marginLeft="@dimen/dp20_marg"
             android:layout_marginRight="@dimen/dp20_marg"
             android:layout_marginBottom="@dimen/dp10_marg"
