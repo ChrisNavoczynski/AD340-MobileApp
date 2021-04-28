@@ -79,12 +79,7 @@ public class SignInActivity extends AppCompatActivity {
         textView5.setText(input5);
         textView6.setText(input6);
 
-        goBackBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        goBackBtn.setOnClickListener(view -> finish());
     }
 
     @Override
