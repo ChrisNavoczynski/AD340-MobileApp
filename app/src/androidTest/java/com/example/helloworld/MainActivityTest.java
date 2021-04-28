@@ -1,6 +1,5 @@
 package com.example.helloworld;
 
-import androidx.test.espresso.contrib.PickerActions;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -44,13 +43,6 @@ public class MainActivityTest {
         onView(allOf(withId(R.id.et_name), hasErrorText("Form contains errors")));
         onView(allOf(withId(R.id.occupation), hasErrorText("Form contains errors")));
         onView(allOf(withId(R.id.description), hasErrorText("Form contains errors")));
-    }
-
-    @Test
-    public void checkDate() {
-        onView(withId(R.id.dobtext)).perform(scrollTo(),(click()));
-        onView(withId(R.id.dobtext)).perform(PickerActions.setDate(2001, 3,1 ));
-        onView(withText("CheckOK")).perform(click());
     }
 
     @Test
