@@ -70,6 +70,10 @@ public class MainActivityTest {
         onView(withId(R.id.et_name)).check(matches(withText("Jasper Doggo")));
         onView(withId(R.id.occupation)).check(matches(withText("Best dog around")));
     }
+
+    @Test
+    public void Constants() {
+    }
 }
 
 
