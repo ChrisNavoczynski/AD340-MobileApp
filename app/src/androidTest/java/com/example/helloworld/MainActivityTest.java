@@ -1,8 +1,10 @@
 package com.example.helloworld;
 
+import androidx.test.espresso.contrib.PickerActions;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,6 +15,7 @@ import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
+import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
@@ -37,12 +40,29 @@ public class MainActivityTest {
     @Test
     public void profileFieldsRequired() {
         onView(withId(R.id.et_name)).perform(typeText(""));
+        onView(withId(R.id.btDatePick)).perform(scrollTo(),(click()));
+        onView(withClassName(Matchers.equalTo(android.widget.DatePicker.class.getName()))).perform(PickerActions.setDate(2001 , 3, 1));
+        onView(withText("OK")).perform(click());
         onView(withId(R.id.occupation)).perform(typeText(""));
         onView(withId(R.id.description)).perform(typeText(""));
         onView(withId(R.id.btn_submit)).perform(scrollTo(),click());
+
         onView(allOf(withId(R.id.et_name), hasErrorText("Form contains errors")));
+        onView(withId(R.id.age)).check((matches(withText("20"))));
         onView(allOf(withId(R.id.occupation), hasErrorText("Form contains errors")));
         onView(allOf(withId(R.id.description), hasErrorText("Form contains errors")));
+    }
+
+    @Test
+    public void validAge() {
+
+        onView(withId(R.id.btDatePick)).perform(scrollTo(),(click()));
+
+        onView(withClassName(Matchers.equalTo(android.widget.DatePicker.class.getName()))).perform(PickerActions.setDate(2010 , 3, 1));
+        onView(withText("OK")).perform(click());
+
+        onView(allOf(withId(R.id.tvDate), hasErrorText("Must Be 18 years or Older!")));
+
     }
 
     @Test

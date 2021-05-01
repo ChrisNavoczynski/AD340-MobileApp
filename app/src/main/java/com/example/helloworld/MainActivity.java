@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.DatePickerDialog;
@@ -14,15 +15,16 @@ import android.widget.EditText;
 import java.util.Calendar;
 import java.util.Date;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    DatePickerDialog picker;
-    private EditText eText;
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener,
+        DatePickerDialog.OnDateSetListener {
+
     private EditText profileName;
-    private EditText validAge;
+    private TextView textDob;
     private String idAs;
     private String seeking;
     private EditText occupation;
@@ -36,11 +38,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         signinViews();
-        eText=(EditText) findViewById(R.id.dobtext);
         spin1.setOnItemSelectedListener(this);
         spin2.setOnItemSelectedListener(this);
-        eText.setInputType(InputType.TYPE_NULL);
-        eText.setOnClickListener(this::onClick);
+        textDob = findViewById(R.id.tvDate);
+        Button btDate = findViewById(R.id.btDatePick);
+        btDate.setInputType(InputType.TYPE_NULL);
+        btDate.setOnClickListener(this::onClick);
     }
 
     private void signinViews() {
@@ -49,16 +52,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         profileName.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
                 Validation.hasText(profileName);
-            }
-            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
-            public void onTextChanged(CharSequence s, int start, int before, int count){}
-        });
-
-        validAge = (EditText) findViewById(R.id.dobtext);
-        // TextWatcher would let us check validation error on the fly
-        validAge.addTextChangedListener(new TextWatcher() {
-            public void afterTextChanged(Editable s) {
-                Validation.isValidAge(validAge, getString(R.string.age_consent), true);
             }
             public void beforeTextChanged(CharSequence s, int start, int count, int after){}
             public void onTextChanged(CharSequence s, int start, int before, int count){}
@@ -108,8 +101,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         boolean ret = true;
 
         if (!Validation.hasText(profileName)) ret = false;
-        if (!Validation.isValidAge(validAge, getString(R.string.age_consent), true)) ret = false;
-        if (!Validation.hasText(validAge)) ret = false;
         if (!Validation.hasText(occupation)) ret = false;
         if (!Validation.hasText(description)) ret = false;
 
@@ -119,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void goToSubmit(View view) {
         Intent intent = new Intent(MainActivity.this, SignInActivity.class);
         intent.putExtra(Constants.PROFILE_NAME, profileName.getText().toString());
-        intent.putExtra(Constants.AGE, Validation.calculateAge(validAge));
+        intent.putExtra(Constants.AGE, textDob.getText().toString());
         intent.putExtra(Constants.ID_AS, idAs);
         intent.putExtra(Constants.SEEKING, seeking);
         intent.putExtra(Constants.OCCUPATION, occupation.getText().toString());
@@ -155,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(Constants.PROFILE_NAME, profileName.getText().toString());
-        outState.putString(Constants.AGE, Validation.calculateAge(validAge));
+        outState.putString(Constants.AGE, textDob.getText().toString());
         outState.putString(Constants.OCCUPATION, occupation.getText().toString());
         outState.putString(Constants.ABOUT_ME, description.getText().toString());
         outState.putString(Constants.BUTTON_TEXT, submitBtn.getText().toString());
@@ -181,18 +172,37 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onDestroy();
     }
 
+    @Override
+    public void onDateSet(android.widget.DatePicker view, int year, int month, int dayOfMonth) {
+        Date validAge = new Date(1050871680000L);
+        Button btn = findViewById(R.id.btn_submit);
+        textDob = findViewById(R.id.tvDate);
+        Calendar mCalender = Calendar.getInstance();
+        mCalender.set(Calendar.YEAR, year);
+        mCalender.set(Calendar.MONTH, month);
+        mCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+        Date dob = new Date();
+
+        Long LAge = Math.subtractExact(dob.getTime(), mCalender.getTime().getTime());
+        int age = (int) Long.divideUnsigned(LAge, 31557600000L);
+        StringBuilder str = new StringBuilder();
+        str.append(age);
+
+        if (mCalender.getTime().compareTo(validAge) > 0) {
+            textDob.setError("Must Be 18 years or Older!");
+            btn.setEnabled(false);
+        } else {
+            textDob.setText(str);
+            btn.setEnabled(true);
+        }
+    }
+
     private void onClick(View v) {
-        final Calendar cldr = Calendar.getInstance();
-        int day = cldr.get(Calendar.DAY_OF_MONTH);
-        int month = cldr.get(Calendar.MONTH);
-        int year = cldr.get(Calendar.YEAR);
-        // date picker dialog
-        picker = new DatePickerDialog(MainActivity.this,
-                (view, year1, monthOfYear, dayOfMonth) ->
-                        eText.setText(String.format(getString(R.string.month_day_year),
-                                monthOfYear + 1, dayOfMonth, year1)), year, month, day);
-        picker.getDatePicker().setMaxDate(new Date().getTime());
-        picker.show();
+
+        com.example.helloworld.SelectDate mDatePickerDialogFragment;
+        mDatePickerDialogFragment = new com.example.helloworld.SelectDate();
+        mDatePickerDialogFragment.show(getSupportFragmentManager(), "DATE SELECT");
 
         Spinner spin1 = (Spinner) findViewById(R.id.gender);
         ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
@@ -210,6 +220,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin2.setAdapter(staticAdapter2);
     }
+
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {

@@ -57,6 +57,20 @@
             android:padding="@dimen/dp15_pad"
             android:textSize="@dimen/sp17_text" />
 
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/form_h"
+            android:layout_marginStart="@dimen/dp20_marg"
+            android:layout_marginTop="@dimen/dp3_marg"
+            android:layout_marginEnd="@dimen/dp10_marg"
+            android:layout_marginBottom="@dimen/dp70_marg"
+            android:layout_below="@id/et_name"
+            android:text="Date of Birth"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp20_text"
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/dobtext"
             android:layout_width="match_parent"
@@ -64,12 +78,29 @@
             android:layout_marginLeft="@dimen/dp20_marg"
             android:layout_marginRight="@dimen/dp20_marg"
             android:layout_marginBottom="@dimen/dp10_marg"
-            android:layout_below="@id/et_name"
+            android:layout_below="@id/tvDate"
             android:background="@drawable/et_custom"
             android:fontFamily="sans-serif"
             android:hint="@string/d_o_b"
             android:padding="@dimen/dp15_pad"
             android:textSize="@dimen/sp17_text" />
+
+        <Button
+            android:id="@+id/btDatePick"
+            android:layout_width="231dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_name"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="@dimen/dp20_marg"
+            android:layout_marginTop="220dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="@dimen/dp20_marg"
+            android:layout_marginBottom="@dimen/dp10_marg"
+            android:background="@drawable/btn_custom2"
+            android:text="@string/select_dob"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp20_text" />
 
         <TextView
             android:id="@+id/id_gender"
@@ -79,7 +110,7 @@
             android:layout_marginTop="@dimen/dp3_marg"
             android:layout_marginEnd="@dimen/dp10_marg"
             android:layout_marginBottom="@dimen/dp70_marg"
-            android:layout_below="@id/dobtext"
+            android:layout_below="@id/btDatePick"
             android:text="@string/id_gender"
             android:textColor="@color/white"
             android:textSize="@dimen/sp20_text"
@@ -89,7 +120,7 @@
             android:id="@+id/gender"
             android:layout_width="@dimen/spin_w"
             android:layout_height="@dimen/spin_h"
-            android:layout_below="@id/dobtext"
+            android:layout_below="@id/btDatePick"
             android:layout_marginTop="@dimen/dp3_marg"
             android:layout_marginEnd="@dimen/dp3_marg"
             android:layout_marginBottom="@dimen/dp3_marg"
@@ -107,7 +138,7 @@
             android:layout_marginTop="@dimen/dp3_marg"
             android:layout_marginEnd="@dimen/dp10_marg"
             android:layout_marginBottom="@dimen/dp70_marg"
-            android:layout_below="@id/dobtext"
+            android:layout_below="@id/btDatePick"
             android:layout_toStartOf="@id/gendertwo"
             android:text="@string/seeking"
             android:textColor="@color/white"
@@ -118,9 +149,9 @@
             android:id="@+id/gendertwo"
             android:layout_width="@dimen/spin_w"
             android:layout_height="@dimen/spin_h"
-            android:layout_below="@id/dobtext"
+            android:layout_below="@id/btDatePick"
             android:layout_marginTop="@dimen/dp3_marg"
-            android:layout_alignEnd="@id/dobtext"
+            android:layout_alignEnd="@id/btDatePick"
             android:layout_marginEnd="@dimen/dp3_marg"
             android:layout_marginBottom="@dimen/dp3_marg"
             android:background="@drawable/et_custom"
@@ -175,7 +206,8 @@
             android:onClick="goToSubmit"
             android:text="@string/goToSubmit"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/sp20_text" />
+            android:textSize="@dimen/sp20_text"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/author"

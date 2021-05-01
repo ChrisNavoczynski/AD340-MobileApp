@@ -36,6 +36,7 @@
     <string name="occupation_stat">\Occupation:  \</string>
     <string name="about_me">About Me:</string>
     <string name="your_profile">Your Profile</string>
+    <string name="select_dob">Select DOB</string>
     <string-array name="select_gender">
         <item>Male</item>
         <item>Female</item>
