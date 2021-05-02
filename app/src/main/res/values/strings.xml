@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Match Up!</string>
     <string name="title">Please Sign In!</string>
-    <string name="name_year">Navoczynski, Chris: 4.23.2021</string>
+    <string name="name_year">Navoczynski, Chris: 4.30.2021</string>
     <string name="futuremenu">FutureMenu</string>
     <string name="d_o_b">Date of Birth </string>
     <string name="get_date">Get Date</string>

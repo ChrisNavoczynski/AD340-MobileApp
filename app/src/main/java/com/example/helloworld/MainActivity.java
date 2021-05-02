@@ -2,7 +2,6 @@ package com.example.helloworld;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.DatePickerDialog;
@@ -184,8 +183,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         Date dob = new Date();
 
-        Long LAge = Math.subtractExact(dob.getTime(), mCalender.getTime().getTime());
-        int age = (int) Long.divideUnsigned(LAge, 31557600000L);
+        Long lngAge = Math.subtractExact(dob.getTime(), mCalender.getTime().getTime());
+        int age = (int) Long.divideUnsigned(lngAge, 31557600000L);
         StringBuilder str = new StringBuilder();
         str.append(age);
 

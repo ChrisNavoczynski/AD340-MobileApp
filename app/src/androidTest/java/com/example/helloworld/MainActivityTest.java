@@ -65,27 +65,14 @@ public class MainActivityTest {
     }
 
     @Test
-    public void canGoToSignInActivity()  {
-        onView(withId(R.id.et_name)).perform(typeText("Jasper"));
-        onView(withId(R.id.btDatePick)).perform(scrollTo(),(click()));
-        onView(withClassName(Matchers.equalTo(android.widget.DatePicker.class.getName()))).perform(PickerActions.setDate(2010 , 4, 1));
-        onView(withText("OK")).perform(click());
+    public void genderIdMatches()  {
         onView(withId(R.id.gender)).perform(click());
         onData(anything()).atPosition(0).perform(click());
         onView(withId(R.id.gender)).check(matches(withSpinnerText(containsString("Male"))));
+
         onView(withId(R.id.gendertwo)).perform(click());
         onData(anything()).atPosition(1).perform(click());
         onView(withId(R.id.gendertwo)).check(matches(withSpinnerText(containsString("Female"))));
-        onView(withId(R.id.occupation)).perform(typeText("Best dog around"));
-        onView(withId(R.id.description)).perform(typeText("I like walks, treats, and bones"));
-
-        onView(withId(R.id.btn_submit)).perform(scrollTo(), click());
-        //onView(withId(R.id.SignedIn)).check(matches(withText("Hi, I'm Jasper!")));
-        onView(withId(R.id.age)).check(matches(withText("Age: 11")));
-        onView(withId(R.id.identified_as)).check(matches(withText("I am: Male")));
-        onView(withId(R.id.seeking)).check(matches(withText("seeking: Female")));
-        onView(withId(R.id.occupation)).check(matches(withText("Occupation: Best dog around")));
-        onView(withId(R.id.about)).check(matches(withText("I like walks, treats, and bones")));
     }
 
     @Test

@@ -19,13 +19,12 @@
 
         <TextView
             android:id="@+id/tv_logo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp25_marg"
+            android:layout_marginStart="@dimen/dp15_marg"
             android:layout_marginTop="@dimen/dp60_marg"
             android:fontFamily="@font/aclonica"
             android:text="@string/signin_title"
-            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="@dimen/sp30_text" />
 
@@ -71,30 +70,13 @@
             android:textSize="@dimen/sp20_text"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/dobtext"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/form_h"
-            android:layout_marginLeft="@dimen/dp20_marg"
-            android:layout_marginRight="@dimen/dp20_marg"
-            android:layout_marginBottom="@dimen/dp10_marg"
-            android:layout_below="@id/tvDate"
-            android:background="@drawable/et_custom"
-            android:fontFamily="sans-serif"
-            android:hint="@string/d_o_b"
-            android:padding="@dimen/dp15_pad"
-            android:textSize="@dimen/sp17_text" />
-
         <Button
             android:id="@+id/btDatePick"
-            android:layout_width="231dp"
+            android:layout_width="@dimen/dp231_marg"
             android:layout_height="wrap_content"
             android:layout_below="@id/et_name"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@id/tvDate"
             android:layout_marginLeft="@dimen/dp20_marg"
-            android:layout_marginTop="220dp"
-            android:layout_marginEnd="20dp"
             android:layout_marginRight="@dimen/dp20_marg"
             android:layout_marginBottom="@dimen/dp10_marg"
             android:background="@drawable/btn_custom2"
