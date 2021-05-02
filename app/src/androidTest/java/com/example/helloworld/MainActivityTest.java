@@ -1,6 +1,7 @@
 package com.example.helloworld;
 
 import androidx.test.espresso.contrib.PickerActions;
+import androidx.test.espresso.intent.Intents;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -9,16 +10,23 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.intent.Intents.intended;
+import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
+import static androidx.test.espresso.intent.matcher.IntentMatchers.hasExtra;
 import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withSpinnerText;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.anything;
+import static org.hamcrest.Matchers.containsString;
 
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
@@ -58,6 +66,38 @@ public class MainActivityTest {
 
         onView(allOf(withId(R.id.tvDate), hasErrorText("Must Be 18 years or Older!")));
 
+    }
+
+    @Test
+    public void canGoToSecondActivityWithMessage() {
+        onView(withId(R.id.et_name)).perform(typeText("Jasper Doodoohead"));
+        onView(withId(R.id.btDatePick)).perform(scrollTo(),(click()));
+        onView(withClassName(Matchers.equalTo(android.widget.DatePicker.class.getName()))).perform(PickerActions.setDate(2010 , 4, 1));
+        onView(withText("OK")).perform(click());
+
+        onView(withId(R.id.gender)).perform(click());
+        onData(anything()).atPosition(0).perform(click());
+        onView(withId(R.id.gender)).check(matches(withSpinnerText(containsString("Male"))));
+        onView(withId(R.id.gender)).perform(click());
+        onData(anything()).atPosition(1).perform(click());
+        onView(withId(R.id.gender)).check(matches(withSpinnerText(containsString("Female"))));
+
+        onView(withId(R.id.occupation)).perform(typeText("Best dog around"));
+        onView(withId(R.id.description)).perform(typeText("Best dog around"));
+        try {
+            Intents.init();
+            onView(withId(R.id.btn_submit)).perform(scrollTo(), click());
+            intended(hasComponent(SignInActivity.class.getName()));
+            intended(hasExtra(Constants.PROFILE_NAME, "Jasper Doodoohead"));
+            intended(hasExtra(Constants.AGE, 11));
+            intended(hasExtra(Constants.ID_AS, "Male"));
+            intended(hasExtra(Constants.SEEKING, "Female"));
+            intended(hasExtra(Constants.OCCUPATION, "Best dog around"));
+            intended(hasExtra(Constants.ABOUT_ME, "I love treats and bones"));
+
+        } finally {
+            Intents.release();
+        }
     }
 
     @Test
