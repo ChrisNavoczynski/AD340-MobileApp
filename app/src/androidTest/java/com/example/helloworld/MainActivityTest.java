@@ -17,7 +17,6 @@ import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.intent.Intents.intended;
-import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasExtra;
 import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
@@ -69,35 +68,27 @@ public class MainActivityTest {
     }
 
     @Test
-    public void canGoToSecondActivityWithMessage() {
+    public void canGoToSignInActivity() throws  InterruptedException {
         onView(withId(R.id.et_name)).perform(typeText("Jasper Doodoohead"));
         onView(withId(R.id.btDatePick)).perform(scrollTo(),(click()));
         onView(withClassName(Matchers.equalTo(android.widget.DatePicker.class.getName()))).perform(PickerActions.setDate(2010 , 4, 1));
         onView(withText("OK")).perform(click());
-
         onView(withId(R.id.gender)).perform(click());
         onData(anything()).atPosition(0).perform(click());
         onView(withId(R.id.gender)).check(matches(withSpinnerText(containsString("Male"))));
         onView(withId(R.id.gender)).perform(click());
         onData(anything()).atPosition(1).perform(click());
         onView(withId(R.id.gender)).check(matches(withSpinnerText(containsString("Female"))));
-
         onView(withId(R.id.occupation)).perform(typeText("Best dog around"));
-        onView(withId(R.id.description)).perform(typeText("Best dog around"));
-        try {
-            Intents.init();
-            onView(withId(R.id.btn_submit)).perform(scrollTo(), click());
-            intended(hasComponent(SignInActivity.class.getName()));
-            intended(hasExtra(Constants.PROFILE_NAME, "Jasper Doodoohead"));
-            intended(hasExtra(Constants.AGE, 11));
-            intended(hasExtra(Constants.ID_AS, "Male"));
-            intended(hasExtra(Constants.SEEKING, "Female"));
-            intended(hasExtra(Constants.OCCUPATION, "Best dog around"));
-            intended(hasExtra(Constants.ABOUT_ME, "I love treats and bones"));
+        onView(withId(R.id.description)).perform(typeText("I like walks, treats, and bones"));
 
-        } finally {
-            Intents.release();
-        }
+        onView(withId(R.id.btn_submit)).perform(scrollTo(), click());
+        onView(withId(R.id.SignedIn)).check(matches(withText("Jasper Doodoohead")));
+        onView(withId(R.id.age)).check(matches(withText("11")));
+        onView(withId(R.id.identified_as)).check(matches(withText("Male")));
+        onView(withId(R.id.seeking)).check(matches(withText("Female")));
+        onView(withId(R.id.occupation)).check(matches(withText("Best dog around")));
+        onView(withId(R.id.about)).check(matches(withText("I like walks, treats, and bones")));
     }
 
     @Test
