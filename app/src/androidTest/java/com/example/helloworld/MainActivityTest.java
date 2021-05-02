@@ -67,17 +67,6 @@ public class MainActivityTest {
     }
 
     @Test
-    public void genderIdMatches()  {
-        onView(withId(R.id.gender)).perform(click());
-        onData(anything()).inAdapterView(withId(R.id.gender)).atPosition(0).perform(click());
-        onView(withId(R.id.gender)).check(matches(withSpinnerText(containsString("Male"))));
-
-        onView(withId(R.id.gendertwo)).perform(click());
-        onData(anything()).inAdapterView(withId(R.id.gendertwo)).atPosition(1).perform(click());
-        onView(withId(R.id.gendertwo)).check(matches(withSpinnerText(containsString("Female"))));
-    }
-
-    @Test
     public void infoStaticOnRotate() {
         onView(withId(R.id.et_name)).perform(typeText("Jasper Doggo"));
         onView(withId(R.id.occupation)).perform(typeText("Best dog around"));
