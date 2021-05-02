@@ -23,6 +23,8 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.is;
 
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
@@ -67,11 +69,11 @@ public class MainActivityTest {
     @Test
     public void genderIdMatches()  {
         onView(withId(R.id.gender)).perform(click());
-        onData(anything()).atPosition(0).perform(click());
+        onData(allOf(is(instanceOf(String.class)), is("Male"))).perform(click());
         onView(withId(R.id.gender)).check(matches(withSpinnerText(containsString("Male"))));
 
         onView(withId(R.id.gendertwo)).perform(click());
-        onData(anything()).atPosition(1).perform(click());
+        onData(allOf(is(instanceOf(String.class)), is("Female"))).perform(click());
         onView(withId(R.id.gendertwo)).check(matches(withSpinnerText(containsString("Female"))));
     }
 
