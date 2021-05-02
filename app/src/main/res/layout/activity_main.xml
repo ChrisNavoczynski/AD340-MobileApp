@@ -75,7 +75,7 @@
             android:layout_width="@dimen/dp231_marg"
             android:layout_height="wrap_content"
             android:layout_below="@id/et_name"
-            android:layout_toRightOf="@id/tvDate"
+            android:layout_alignParentEnd="true"
             android:layout_marginLeft="@dimen/dp20_marg"
             android:layout_marginRight="@dimen/dp20_marg"
             android:layout_marginBottom="@dimen/dp10_marg"
