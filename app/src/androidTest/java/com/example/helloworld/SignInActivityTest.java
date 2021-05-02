@@ -23,6 +23,8 @@ public class SignInActivityTest {
             Intent testIntent = new Intent();
             testIntent.putExtra(Constants.PROFILE_NAME, "Jasper Doodoohead");
             testIntent.putExtra(Constants.AGE, 11);
+            testIntent.putExtra(Constants.ID_AS, "Male");
+            testIntent.putExtra(Constants.SEEKING, "Female");
             testIntent.putExtra(Constants.OCCUPATION, "Guard Dog");
             testIntent.putExtra(Constants.ABOUT_ME, "I love walks, treats, and bones");
             return testIntent;

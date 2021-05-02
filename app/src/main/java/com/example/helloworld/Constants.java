@@ -11,3 +11,4 @@ public class Constants {
     static final String TEXTVIEW_TEXT = "textview_txt";
     static final String REQUIRED_MSG = "required";
 }
+
