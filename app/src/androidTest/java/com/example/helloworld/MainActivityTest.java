@@ -73,14 +73,14 @@ public class MainActivityTest {
         onView(withId(R.id.gender)).perform(click());
         onData(anything()).atPosition(0).perform(click());
         onView(withId(R.id.gender)).check(matches(withSpinnerText(containsString("Male"))));
-        onView(withId(R.id.gender)).perform(click());
+        onView(withId(R.id.gendertwo)).perform(click());
         onData(anything()).atPosition(1).perform(click());
-        onView(withId(R.id.gender)).check(matches(withSpinnerText(containsString("Female"))));
+        onView(withId(R.id.gendertwo)).check(matches(withSpinnerText(containsString("Female"))));
         onView(withId(R.id.occupation)).perform(typeText("Best dog around"));
         onView(withId(R.id.description)).perform(typeText("I like walks, treats, and bones"));
 
         onView(withId(R.id.btn_submit)).perform(scrollTo(), click());
-        onView(withId(R.id.SignedIn)).check(matches(withText("Hi, I'm Jasper!")));
+        //onView(withId(R.id.SignedIn)).check(matches(withText("Hi, I'm Jasper!")));
         onView(withId(R.id.age)).check(matches(withText("Age: 11")));
         onView(withId(R.id.identified_as)).check(matches(withText("I am: Male")));
         onView(withId(R.id.seeking)).check(matches(withText("seeking: Female")));
