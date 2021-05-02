@@ -109,7 +109,7 @@ public class MainActivityTest {
                 .inAdapterView(childAtPosition(
                         withClassName(is("android.widget.PopupWindow$PopupBackgroundView")),
                         0))
-                .atPosition(1);
+                .atPosition(0);
         appCompatCheckedTextView2.perform(click());
 
         ViewInteraction spinner = onView(
