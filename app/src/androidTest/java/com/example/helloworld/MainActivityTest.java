@@ -1,7 +1,6 @@
 package com.example.helloworld;
 
 import androidx.test.espresso.contrib.PickerActions;
-import androidx.test.espresso.intent.Intents;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -16,8 +15,6 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.intent.Intents.intended;
-import static androidx.test.espresso.intent.matcher.IntentMatchers.hasExtra;
 import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -68,8 +65,8 @@ public class MainActivityTest {
     }
 
     @Test
-    public void canGoToSignInActivity() throws  InterruptedException {
-        onView(withId(R.id.et_name)).perform(typeText("Jasper Doodoohead"));
+    public void canGoToSignInActivity()  {
+        onView(withId(R.id.et_name)).perform(typeText("Jasper"));
         onView(withId(R.id.btDatePick)).perform(scrollTo(),(click()));
         onView(withClassName(Matchers.equalTo(android.widget.DatePicker.class.getName()))).perform(PickerActions.setDate(2010 , 4, 1));
         onView(withText("OK")).perform(click());
@@ -83,11 +80,11 @@ public class MainActivityTest {
         onView(withId(R.id.description)).perform(typeText("I like walks, treats, and bones"));
 
         onView(withId(R.id.btn_submit)).perform(scrollTo(), click());
-        onView(withId(R.id.SignedIn)).check(matches(withText("Jasper Doodoohead")));
-        onView(withId(R.id.age)).check(matches(withText("11")));
-        onView(withId(R.id.identified_as)).check(matches(withText("Male")));
-        onView(withId(R.id.seeking)).check(matches(withText("Female")));
-        onView(withId(R.id.occupation)).check(matches(withText("Best dog around")));
+        onView(withId(R.id.SignedIn)).check(matches(withText("Hi, I'm Jasper!")));
+        onView(withId(R.id.age)).check(matches(withText("Age: 11")));
+        onView(withId(R.id.identified_as)).check(matches(withText("I am: Male")));
+        onView(withId(R.id.seeking)).check(matches(withText("seeking: Female")));
+        onView(withId(R.id.occupation)).check(matches(withText("Occupation: Best dog around")));
         onView(withId(R.id.about)).check(matches(withText("I like walks, treats, and bones")));
     }
 
