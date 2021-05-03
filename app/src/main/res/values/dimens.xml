@@ -29,6 +29,7 @@
     <dimen name="sp24_text">24sp</dimen>
     <dimen name="dp10_marg">10dp</dimen>
     <dimen name="dp5_marg">5dp</dimen>
+    <dimen name="dp40_marg">40dp</dimen>
     <dimen name="dp30_marg">30dp</dimen>
     <dimen name="dp20_marg">20dp</dimen>
     <dimen name="dp2_marg">2dp</dimen>

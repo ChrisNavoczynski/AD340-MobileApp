@@ -183,16 +183,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         Date dob = new Date();
 
-        Long lngAge = Math.subtractExact(dob.getTime(), mCalender.getTime().getTime());
-        int age = (int) Long.divideUnsigned(lngAge, 31557600000L);
-        StringBuilder str = new StringBuilder();
-        str.append(age);
+        long longNum = Math.subtractExact(dob.getTime(), mCalender.getTime().getTime());
+        int age = (int) Long.divideUnsigned(longNum, 31557600000L);
+        StringBuilder strAge = new StringBuilder();
+        strAge.append(age);
 
         if (mCalender.getTime().compareTo(validAge) > 0) {
             textDob.setError("Must Be 18 years or Older!");
             btn.setEnabled(false);
         } else {
-            textDob.setText(str);
+            textDob.setText(strAge);
             btn.setEnabled(true);
         }
     }

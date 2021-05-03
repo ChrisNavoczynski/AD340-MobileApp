@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/myprofilepic"
+            android:scaleType="centerCrop"
+            android:src="@drawable/love" />
+
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="@dimen/pic_width"
+            android:layout_height="@dimen/pic_height"
+            android:layout_marginTop="@dimen/dp5_marg"
+            android:layout_marginEnd="@dimen/dp10_marg"
+            android:layout_toEndOf="@id/SignedIn"
+            android:contentDescription="@string/profilePic"
+            android:src="@drawable/dog" />
+
+        <TextView
+            android:id="@+id/SignedIn"
+            android:layout_width="@dimen/pRet_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp5_marg"
+            android:layout_marginTop="@dimen/dp40_marg"
+            android:layout_marginEnd="@dimen/dp30_marg"
+            android:layout_marginBottom="@dimen/dp2_marg"
+            android:fontFamily="@font/aclonica"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp20_text" />
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="@dimen/pRet_width"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SignedIn"
+            android:layout_marginStart="@dimen/dp5_marg"
+            android:layout_marginTop="@dimen/dp20_marg"
+            android:layout_marginEnd="@dimen/dp30_marg"
+            android:layout_marginBottom="@dimen/dp2_marg"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp20_text"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/identified_as"
+            android:layout_width="@dimen/pRet_width"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/age"
+            android:layout_marginStart="@dimen/dp5_marg"
+            android:layout_marginTop="@dimen/dp2_marg"
+            android:layout_marginEnd="@dimen/dp30_marg"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp17_text"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/seeking"
+            android:layout_width="@dimen/pRet_width"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/identified_as"
+            android:layout_marginStart="@dimen/dp5_marg"
+            android:layout_marginEnd="@dimen/dp30_marg"
+            android:layout_marginBottom="@dimen/dp5_marg"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp17_text"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/occupation"
+            android:layout_width="@dimen/job_width"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profilePic"
+            android:layout_marginStart="@dimen/dp20_marg"
+            android:layout_marginTop="@dimen/dp5_marg"
+            android:layout_marginEnd="@dimen/dp20_marg"
+            android:layout_marginBottom="@dimen/dp5_marg"
+            android:textAlignment="inherit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp17_text"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/descript_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/occupation"
+            android:layout_marginLeft="@dimen/dp20_marg"
+            android:layout_marginTop="@dimen/dp10_marg"
+            android:layout_marginRight="@dimen/dp20_marg"
+            android:text="@string/about_me"
+            android:textAlignment="inherit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp17_text"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descript_title"
+            android:layout_marginLeft="@dimen/dp20_marg"
+            android:layout_marginRight="@dimen/dp20_marg"
+            android:layout_marginBottom="@dimen/dp30_marg"
+            android:textAlignment="inherit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp17_text"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</ScrollView>
