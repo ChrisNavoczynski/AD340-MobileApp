@@ -38,12 +38,6 @@ public class SignInActivityTest {
     };
 
     @Test
-    public void hasTextOnScreen() {
-        onView(withId(R.id.descript_title))
-                .check(matches(withText(R.string.about_me)));
-    }
-
-    @Test
     public void clickProfileFragmentDrawer() {
         onView(withId(R.id.drawer_layout))
                 .check(matches(isClosed(Gravity.LEFT)))
