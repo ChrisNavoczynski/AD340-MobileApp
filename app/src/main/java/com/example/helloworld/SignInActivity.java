@@ -102,8 +102,7 @@ public class SignInActivity extends AppCompatActivity implements NavigationView.
                 sEmploy, sDescribe));
         FragmentTransaction transact = fragManage.beginTransaction();
         transact.add(R.id.frag_profile, fragment, "frag1");
-
-        //goBackBtn.setOnClickListener(view -> finish());
+        transact.commit();
     }
 
     @Override
