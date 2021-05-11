@@ -42,8 +42,8 @@
 
             <Button
                 android:id="@+id/favBtn"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="@dimen/dp40_layout"
+                android:layout_height="@dimen/dp40_layout"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="@dimen/dp10_marg"

@@ -20,6 +20,7 @@ public class MatchesFragment extends Fragment {
     RecyclerView recyclerView;
     List <MatchData> mMatchList;
     MatchData matchData;
+    Button favBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceSate) {

@@ -23,13 +23,13 @@ class MatchViewHolder extends RecyclerView.ViewHolder {
         favBtn = itemView.findViewById(R.id.favBtn);
 
         favBtn.setOnClickListener(view -> {
+            String name = "You liked " + mName.getText().toString();
             favBtn.setBackgroundResource(R.drawable.ic_color_favorite_24);
                 Toast toast = Toast.makeText(view.getContext(),
-                        R.string.favorite_message, Toast.LENGTH_LONG);
+                        name, Toast.LENGTH_LONG);
                 View tView = toast.getView();
                 tView.setBackgroundResource(R.color.p_light);
                 toast.show();
         });
     }
-
 }

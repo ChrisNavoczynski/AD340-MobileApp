@@ -43,4 +43,5 @@
     <dimen name="img_height_168">168dp</dimen>
     <dimen name="dp4_marg">4dp</dimen>
     <dimen name="dp200_cardHgt">200dp</dimen>
+    <dimen name="dp40_layout">40dp</dimen>
 </resources>

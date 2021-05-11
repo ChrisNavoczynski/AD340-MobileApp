@@ -16,7 +16,7 @@
         android:layout_marginTop="@dimen/dp3_marg"
         android:layout_marginBottom="@dimen/dp5_marg"
         android:textColor="@color/white"
-        android:text="My Matches"
+        android:text="@string/my_matches"
         android:textSize="@dimen/sp30_text"
         android:textStyle="bold"/>
 
