@@ -8,9 +8,6 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import static android.provider.Settings.System.getString;
-import static androidx.core.graphics.drawable.IconCompat.getResources;
-
 
 class MatchViewHolder extends RecyclerView.ViewHolder {
 

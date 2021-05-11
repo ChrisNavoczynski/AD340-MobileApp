@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
-
 public class MatchViewAdapter extends RecyclerView.Adapter< MatchViewHolder > {
 
     private List< MatchData > matchList;

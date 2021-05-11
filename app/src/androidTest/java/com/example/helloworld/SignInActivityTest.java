@@ -12,15 +12,12 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.contrib.DrawerMatchers.isClosed;
-import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.hasToString;
+
 
 @RunWith(AndroidJUnit4.class)
 
@@ -75,12 +72,6 @@ public class SignInActivityTest {
                 .perform(NavigationViewActions.navigateTo(R.id.nav_settings));
 
         onView(allOf(withId(R.id.future_settings))).check((matches(withText("Settings will go here"))));
-    }
-
-    @Test
-    public void favoritesToast() {
-        onView(withId(R.id.favBtn)).perform(scrollTo(),click());
-        onView(allOf(withId(R.id.tvMatch), hasToString("You liked ")));
     }
 
     @Test
