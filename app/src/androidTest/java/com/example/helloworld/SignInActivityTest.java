@@ -58,7 +58,7 @@ public class SignInActivityTest {
         onView(withId(R.id.nav_view))
                 .perform(NavigationViewActions.navigateTo(R.id.nav_matches));
 
-        onView(allOf(withId(R.id.future_matches))).check((matches(withText("Matches will go here"))));
+        onView(allOf(withId(R.id.matches_will_go_here))).check((matches(withText("My Matches"))));
     }
 
     @Test

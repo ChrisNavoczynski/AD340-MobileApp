@@ -9,13 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@drawable/love"
         tools:context=".MainActivity">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/love" />
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/tv_logo"

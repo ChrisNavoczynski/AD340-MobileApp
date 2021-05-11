@@ -40,4 +40,7 @@
     <dimen name="dp25_marg">25dp</dimen>
     <dimen name="dp15_marg">15dp</dimen>
     <dimen name="dp231_marg">231dp</dimen>
+    <dimen name="img_height_168">168dp</dimen>
+    <dimen name="dp4_marg">4dp</dimen>
+    <dimen name="dp200_cardHgt">200dp</dimen>
 </resources>

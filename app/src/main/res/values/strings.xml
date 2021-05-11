@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Match Up!</string>
     <string name="title">Please Sign In!</string>
-    <string name="name_year">Navoczynski, Chris: 4.30.2021</string>
+    <string name="name_year">Navoczynski, Chris: 5.7.2021</string>
     <string name="futuremenu">FutureMenu</string>
     <string name="d_o_b">Date of Birth </string>
     <string name="get_date">Get Date</string>
@@ -41,7 +41,7 @@
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
     <string name="settings_will_go_here">Settings will go here</string>
-    <string name="matches_will_go_here">Matches will go here</string>
+    <string name="matches_will_go_here">My Matches</string>
     <string-array name="select_gender">
         <item>Male</item>
         <item>Female</item>
@@ -50,5 +50,17 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="match_name">match_name</string>
+    <string name="matchname">MatchName</string>
+    <string name="my_matches">My Matches</string>
+    <string name="favorite_message">YOU LIKED THIS MATCH!</string>
+    <string name="akika">Akika</string>
+    <string name="cuddles">Cuddles</string>
+    <string name="milan">Milan</string>
+    <string name="tifa">Tifa</string>
+    <string name="lulu">Lulu</string>
+    <string name="snowflake">Snowflake</string>
+    <string name="sunshine">Sunshine</string>
+    <string name="isis">Isis</string>
 
 </resources>

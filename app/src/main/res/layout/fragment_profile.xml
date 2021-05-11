@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/love"
     tools:context=".ProfileFragment">
 
     <RelativeLayout
@@ -15,8 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/myprofilepic"
-            android:scaleType="centerCrop"
-            android:src="@drawable/love" />
+            android:scaleType="centerCrop" />
 
         <ImageView
             android:id="@+id/profilePic"

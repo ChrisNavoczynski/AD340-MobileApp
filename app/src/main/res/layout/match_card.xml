@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp200_cardHgt"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp200_cardHgt"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/dp4_marg"
+        app:cardElevation="@dimen/dp3_marg"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/dp4_marg">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/img_height_168"
+                android:layout_gravity="top"
+                android:background="@color/p_dark"
+                android:src="@drawable/akika"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/tvMatch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="@string/matchname"
+                android:textSize="@dimen/sp17_text"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/favBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/dp10_marg"
+                android:layout_marginBottom="@dimen/dp30_marg"
+                android:background="@drawable/ic_shadow_favorite_24"
+                android:onClick="DisplayToast"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
