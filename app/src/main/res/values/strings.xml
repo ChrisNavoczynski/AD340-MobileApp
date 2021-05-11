@@ -61,6 +61,7 @@
     <string name="snowflake">Snowflake</string>
     <string name="sunshine">Sunshine</string>
     <string name="isis">Isis</string>
+    <string name="fav_toast">\"You liked \"</string>
 
 
 </resources>
