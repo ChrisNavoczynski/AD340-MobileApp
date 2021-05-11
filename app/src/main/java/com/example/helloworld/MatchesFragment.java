@@ -33,7 +33,7 @@ public class MatchesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_matches, container, false);
 
         recyclerView = view.findViewById(R.id.recyclerview);
-        recyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(false);
         GridLayoutManager myGridLayout = new GridLayoutManager(getActivity(), 2,
                 GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(myGridLayout);
