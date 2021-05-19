@@ -3,8 +3,10 @@ package com.example.helloworld;
 import android.content.Intent;
 import android.view.Gravity;
 
+import androidx.test.espresso.Espresso;
 import androidx.test.espresso.contrib.DrawerActions;
 import androidx.test.espresso.contrib.NavigationViewActions;
+import androidx.test.espresso.contrib.RecyclerViewActions;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -12,10 +14,14 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.contrib.DrawerMatchers.isClosed;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static com.example.helloworld.TestUtils.waitFor;
 import static org.hamcrest.Matchers.allOf;
 
 
@@ -72,6 +78,25 @@ public class SignInActivityTest {
                 .perform(NavigationViewActions.navigateTo(R.id.nav_settings));
 
         onView(allOf(withId(R.id.future_settings))).check((matches(withText("Settings will go here"))));
+    }
+
+    @Test
+    public void testMatchesLikeToast() {
+        onView(isRoot()).perform(waitFor(1000));
+        // Open Drawer to click on navigation.
+        onView(withId(R.id.drawer_layout)).perform(DrawerActions.open()); // Open Drawer
+        onView(isRoot()).perform(waitFor(1000));
+        onView(withText(R.string.matches))
+                .perform(click()); // Select nav button in nav drawer
+        onView(isRoot()).perform(waitFor(1000));
+        Espresso.pressBack();
+        onView(isRoot()).perform(waitFor(1000));
+        onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.scrollToPosition(1));
+        onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.actionOnItemAtPosition(1, new TestUtils.ClickOnLikeButton()));
+        onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.actionOnItemAtPosition(1, new TestUtils.ClickOnLikeButton()));
+
+        onView(withText(R.string.message)).inRoot(new TestUtils.ToastMatcher())
+                .check(matches(isDisplayed()));
     }
 
     @Test

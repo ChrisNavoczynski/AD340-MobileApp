@@ -62,6 +62,8 @@
     <string name="sunshine">Sunshine</string>
     <string name="isis">Isis</string>
     <string name="fav_toast">\"You liked \"</string>
+    <string name="matches">"Matches"</string>
+    <string name="message">"You Liked Mark the King"</string>>
 
 
 </resources>

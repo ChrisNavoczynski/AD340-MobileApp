@@ -33,6 +33,7 @@ import org.hamcrest.TypeSafeMatcher;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom;
 import static androidx.test.espresso.matcher.ViewMatchers.isDescendantOfA;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
@@ -117,6 +118,26 @@ public class TestUtils {
         AtomicReference<T> activityRef = new AtomicReference<>();
         activityScenarioRule.getScenario().onActivity(activityRef::set);
         return activityRef.get();
+    }
+
+    public static class ClickOnLikeButton implements ViewAction{
+
+        ViewAction c = click();
+
+        @Override
+        public Matcher<View> getConstraints() {
+            return c.getConstraints();
+        }
+
+        @Override
+        public String getDescription() {
+            return "Click on a child view with specified id.";
+        }
+
+        @Override
+        public void perform(UiController uiController, View view) {
+            c.perform(uiController,view.findViewById(R.id.favBtn));
+        }
     }
 
     public static class ToastMatcher extends TypeSafeMatcher<Root> {
