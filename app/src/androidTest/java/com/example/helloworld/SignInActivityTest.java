@@ -89,12 +89,8 @@ public class SignInActivityTest {
         onView(withText(R.string.matches))
                 .perform(click()); // Select nav button in nav drawer
         onView(isRoot()).perform(waitFor(1000));
-        Espresso.pressBack();
-        onView(isRoot()).perform(waitFor(1000));
         onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.scrollToPosition(1));
         onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.actionOnItemAtPosition(1, new TestUtils.ClickOnLikeButton()));
-        onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.actionOnItemAtPosition(1, new TestUtils.ClickOnLikeButton()));
-
         onView(withText(R.string.message)).inRoot(new TestUtils.ToastMatcher())
                 .check(matches(isDisplayed()));
     }
