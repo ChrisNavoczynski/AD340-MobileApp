@@ -46,16 +46,8 @@ public class MatchesFragment extends Fragment {
                     myAdapter.notifyDataSetChanged();
                 }
         );
-        
+
         return view;
-    }
-
-    public MatchesViewModel getViewModel() {
-        return viewModel;
-    }
-
-    public void setViewModel(MatchesViewModel vm) {
-        viewModel = vm;
     }
 
     @Override

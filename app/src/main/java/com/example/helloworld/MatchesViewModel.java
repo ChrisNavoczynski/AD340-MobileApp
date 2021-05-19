@@ -13,9 +13,9 @@ public class MatchesViewModel {
        model = new MatchesModel();
     }
 
-    public void addMatches(Matches matches) {
-        model.addMatches(matches);
-    }
+//    public void addMatches(Matches matches) {
+//        model.addMatches(matches);
+//    }
 
     public void getMatches(Consumer<ArrayList<Matches>> resultCallback) {
         model.getMatches(
@@ -35,9 +35,9 @@ public class MatchesViewModel {
         );
     }
 
-    public void updateMatches(Matches matches) {
-        model.updateMatchesById(matches);
-    }
+//    public void updateMatches(Matches matches) {
+//        model.updateMatchesById(matches);
+//    }
 
     public void clear() {
         model.clear();
