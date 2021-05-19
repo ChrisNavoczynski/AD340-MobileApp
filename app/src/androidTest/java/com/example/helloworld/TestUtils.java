@@ -3,8 +3,12 @@ package com.example.helloworld;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.os.IBinder;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
+
+import androidx.test.espresso.Root;
 import androidx.test.espresso.UiController;
 import androidx.test.espresso.ViewAction;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
@@ -12,6 +16,8 @@ import androidx.test.platform.app.InstrumentationRegistry;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
+import org.hamcrest.TypeSafeMatcher;
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 import static androidx.test.espresso.Espresso.onView;
@@ -96,5 +102,26 @@ public class TestUtils {
         AtomicReference<T> activityRef = new AtomicReference<>();
         activityScenarioRule.getScenario().onActivity(activityRef::set);
         return activityRef.get();
+    }
+
+    public static class ToastMatcher extends TypeSafeMatcher<Root> {
+
+        @Override
+        public void describeTo(Description description) {
+            description.appendText("is toast");
+        }
+
+        @Override
+        public boolean matchesSafely(Root root) {
+            int type = root.getWindowLayoutParams().get().type;
+            if ((type == WindowManager.LayoutParams.TYPE_TOAST)) {
+                IBinder windowToken = root.getDecorView().getWindowToken();
+                IBinder appToken = root.getDecorView().getApplicationWindowToken();
+                if (windowToken == appToken) {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
