@@ -3,6 +3,7 @@ package com.example.helloworld;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.content.Intent;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -15,6 +16,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 public class SignInActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     //Variable from User Input
@@ -35,6 +38,8 @@ public class SignInActivity extends AppCompatActivity implements NavigationView.
     private FragmentManager fragManage;
     private DrawerLayout drawer;
     private Intent intent;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -103,6 +108,7 @@ public class SignInActivity extends AppCompatActivity implements NavigationView.
         FragmentTransaction transact = fragManage.beginTransaction();
         transact.add(R.id.frag_profile, fragment, "frag1");
         transact.commit();
+
     }
 
     @Override
@@ -129,6 +135,12 @@ public class SignInActivity extends AppCompatActivity implements NavigationView.
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+/*    @Override
+    public void onListFragmentInteraction(Matches matches) {
+        matches.liked = true;
+        viewModel.updateMatchesById(matches);
+    }*/
 
     @Override
     public void onBackPressed() {
