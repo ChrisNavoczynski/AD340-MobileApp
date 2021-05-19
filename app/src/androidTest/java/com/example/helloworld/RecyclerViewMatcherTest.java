@@ -9,6 +9,7 @@ import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 
+//Code tests provided by examples online
 public class RecyclerViewMatcherTest {
     private final int recyclerViewId;
 
