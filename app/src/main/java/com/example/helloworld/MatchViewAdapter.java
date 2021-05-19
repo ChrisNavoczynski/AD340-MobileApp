@@ -4,12 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.squareup.picasso.Picasso;
-
 import java.util.List;
 
 public class MatchViewAdapter extends RecyclerView.Adapter< MatchViewHolder > {
@@ -33,18 +30,12 @@ public class MatchViewAdapter extends RecyclerView.Adapter< MatchViewHolder > {
         if (matchList != null) {
             Matches mBind = this.matchList.get(position);
             holder.mName.setText(mBind.name);
-/*            Picasso.with(mContext)
-                    .load(uploadCurrent.getImageUrl())
-                    .placeholder(R.mipmap.imageUrl)
-                    .into(holder.imageView, new com.squareup.picasso.Callback() {
-                        @Override
-                        public void onSuccess(){}
-                        @Override
-                        public void onError(){}
-                    });*/
-/*            holder.mImage.setImageResource(matchList.get(position).getMatchImage());
-            holder.mName.setText(matchList.get(position).getMatchName());*/
-
+            Picasso.get().load(mBind.imageUrl).into(holder.mImage);
+            if (mBind.liked) {
+                holder.favBtn.setBackgroundResource(R.drawable.ic_color_favorite_24);
+            } else {
+                holder.favBtn.setBackgroundResource(R.drawable.ic_shadow_favorite_24);
+            }
         }
     }
 

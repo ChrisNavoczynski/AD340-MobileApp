@@ -46,24 +46,7 @@ public class MatchesFragment extends Fragment {
                     myAdapter.notifyDataSetChanged();
                 }
         );
-
-/*        mMatchList = new ArrayList<>();
-        matchData = new MatchData(getString(R.string.akika), R.drawable.akika);
-        mMatchList.add(matchData);
-        matchData = new MatchData(getString(R.string.cuddles), R.drawable.cuddles);
-        mMatchList.add(matchData);
-        matchData = new MatchData(getString(R.string.milan), R.drawable.milan);
-        mMatchList.add(matchData);
-        matchData = new MatchData(getString(R.string.tifa), R.drawable.tifa);
-        mMatchList.add(matchData);
-        matchData = new MatchData(getString(R.string.lulu), R.drawable.lulu);
-        mMatchList.add(matchData);
-        matchData = new MatchData(getString(R.string.snowflake), R.drawable.snowflake);
-        mMatchList.add(matchData);
-        matchData = new MatchData(getString(R.string.sunshine), R.drawable.sunshine);
-        mMatchList.add(matchData);
-        matchData = new MatchData(getString(R.string.isis), R.drawable.isis);
-        mMatchList.add(matchData);*/
+        
         return view;
     }
 

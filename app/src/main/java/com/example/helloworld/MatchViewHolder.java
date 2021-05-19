@@ -2,22 +2,21 @@ package com.example.helloworld;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.android.volley.toolbox.NetworkImageView;
 import androidx.recyclerview.widget.RecyclerView;
-
 
 class MatchViewHolder extends RecyclerView.ViewHolder {
 
-    //public NetworkImageView mImage;
+    public ImageView mImage;
     public TextView mName;
-    Button favBtn;
+    public Button favBtn;
 
     MatchViewHolder(View itemView) {
         super(itemView);
 
-        //mImage = itemView.findViewById(R.id.ivImage);
+        mImage = itemView.findViewById(R.id.ivImage);
         mName = itemView.findViewById(R.id.tvMatch);
         favBtn = itemView.findViewById(R.id.favBtn);
 
