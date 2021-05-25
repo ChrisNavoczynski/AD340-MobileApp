@@ -73,6 +73,21 @@ public class MainActivityTest {
     }
 
     @Test
+    public void fillForm() throws InterruptedException {
+        onView(withId(R.id.et_name)).perform(typeText("Jasper Doggo"));
+        onView(withId(R.id.btDatePick)).perform(scrollTo(), (click()));
+        onView(withClassName(Matchers.equalTo(android.widget.DatePicker.class.getName()))).perform(PickerActions.setDate(2000 , 3, 17));
+        onView(withId(R.id.gender)).perform(click());
+        onView(withText("Female")).perform(click());
+        onView(withId(R.id.gendertwo)).perform(click());
+        onView(withText("Trans")).perform(click());
+        onView(withId(R.id.occupation)).perform(typeText("Best dog around"));
+        onView(withId(R.id.description)).perform(typeText("I love going to the park"));
+
+        onView(withId(R.id.btn_submit)).perform(scrollTo(), click());
+    }
+
+    @Test
     public void Constants() {
     }
 }
