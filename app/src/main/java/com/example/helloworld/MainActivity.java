@@ -2,6 +2,8 @@ package com.example.helloworld;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.DatePickerDialog;
@@ -13,11 +15,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import java.util.Calendar;
 import java.util.Date;
+
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.text.Editable;
 import android.text.TextWatcher;
+
+import com.example.helloworld.entity.User;
+import com.example.helloworld.viewmodels.UserViewModel;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener,
         DatePickerDialog.OnDateSetListener {
@@ -203,7 +209,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         mDatePickerDialogFragment = new com.example.helloworld.SelectDate();
         mDatePickerDialogFragment.show(getSupportFragmentManager(), "DATE SELECT");
 
-        Spinner spin1 = (Spinner) findViewById(R.id.gender);
+        Spinner spin1 = findViewById(R.id.gender);
         ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
                 .createFromResource(this, R.array.select_gender,
                         android.R.layout.simple_spinner_item);
@@ -211,7 +217,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin1.setAdapter(staticAdapter);
 
-        Spinner spin2 = (Spinner) findViewById(R.id.gendertwo);
+        Spinner spin2 = findViewById(R.id.gendertwo);
         ArrayAdapter<CharSequence> staticAdapter2 = ArrayAdapter
                 .createFromResource(this, R.array.select_gender,
                         android.R.layout.simple_spinner_item);

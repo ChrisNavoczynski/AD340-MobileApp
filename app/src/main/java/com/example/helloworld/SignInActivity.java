@@ -59,11 +59,11 @@ public class SignInActivity extends AppCompatActivity implements NavigationView.
         toggle.syncState();
         fragManage = getSupportFragmentManager();
 
-        StringBuilder pName = new StringBuilder(getString(R.string.thanks_signed_in));
-        StringBuilder pAge = new StringBuilder(getString(R.string.show_age));
-        StringBuilder pAsId = new StringBuilder(getString(R.string.identify_as));
-        StringBuilder pSeekId = new StringBuilder(getString(R.string.seeking_id));
-        StringBuilder pEmploy = new StringBuilder(getString(R.string.occupation_stat));
+        StringBuilder pName = new StringBuilder(getString(R.string.thanks_signed_in) + " ");
+        StringBuilder pAge = new StringBuilder(getString(R.string.show_age) + " ");
+        StringBuilder pAsId = new StringBuilder(getString(R.string.identify_as) + " ");
+        StringBuilder pSeekId = new StringBuilder(getString(R.string.seeking_id) + " ");
+        StringBuilder pEmploy = new StringBuilder(getString(R.string.occupation_stat) + " ");
         StringBuilder pDescribe = new StringBuilder();
         intent = getIntent();
         Bundle b = intent.getExtras();

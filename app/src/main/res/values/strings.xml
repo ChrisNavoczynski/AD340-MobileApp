@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Match Up!</string>
     <string name="title">Please Sign In!</string>
-    <string name="name_year">Navoczynski, Chris: 5.7.2021</string>
+    <string name="name_year">Navoczynski, Chris: 5.20.2021</string>
     <string name="futuremenu">FutureMenu</string>
     <string name="d_o_b">Date of Birth </string>
     <string name="get_date">Get Date</string>
@@ -24,16 +24,16 @@
     <string name="default_seek">Female</string>
     <string name="default_job">Unemployed</string>
     <string name="default_about">Nothing</string>
-    <string name="thanks_signed_in">\Hi, I\'m \</string>
+    <string name="thanks_signed_in">\Hi, I\'m  \</string>
     <string name="description">Description</string>
     <string name="select">[Select]</string>
     <string name="age_consent">Must be 18 or older</string>
     <string name="form_errors">Form contains errors</string>
     <string name="profilePic">profilePic</string>
-    <string name="show_age">\Age:  \</string>
-    <string name="identify_as">\I am: \</string>
+    <string name="show_age">\Age:   \</string>
+    <string name="identify_as">\I am:  \</string>
     <string name="seeking_id">\seeks: \</string>
-    <string name="occupation_stat">\Occupation:  \</string>
+    <string name="occupation_stat">Occupation:  \</string>
     <string name="about_me">About Me:</string>
     <string name="your_profile">Your Profile</string>
     <string name="select_dob">Select DOB</string>
@@ -47,6 +47,55 @@
         <item>Female</item>
         <item>Trans</item>
         <item>Non-Binary</item>
+    </string-array>
+    <string-array name="reminder_time">
+        <item>00:00</item>
+        <item>01:00</item>
+        <item>02:00</item>
+        <item>03:00</item>
+        <item>04:00</item>
+        <item>05:00</item>
+        <item>06:00</item>
+        <item>07:00</item>
+        <item>08:00</item>
+        <item>09:00</item>
+        <item>10:00</item>
+        <item>11:00</item>
+        <item>12:00</item>
+        <item>13:00</item>
+        <item>14:00</item>
+        <item>15:00</item>
+        <item>16:00</item>
+        <item>17:00</item>
+        <item>18:00</item>
+        <item>19:00</item>
+        <item>20:00</item>
+        <item>21:00</item>
+        <item>22:00</item>
+        <item>23:00</item>
+    </string-array>
+    <string-array name="miles_search">
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>100</item>
+    </string-array>
+    <string-array name="age_bracket">
+        <item>18</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+        <item>45</item>
+        <item>50</item>
+        <item>55</item>
+        <item>60+</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -63,7 +112,24 @@
     <string name="isis">Isis</string>
     <string name="fav_toast">\"You liked \"</string>
     <string name="matches">"Matches"</string>
-    <string name="message">"You Liked Mark the King"</string>>
+    <string name="message">"You Liked Mark the King"</string>
+    <string name="update_your_profile">Update Your Profile!</string>
+    <string name="display_name">Display Name</string>
+    <string name="new_matches_reminder">Set Match Reminder</string>
+    <string name="ie_5_00_pm">5:00 PM</string>
+    <string name="search_within">Search Within</string>
+    <string name="ie_30">30</string>
+    <string name="miles">miles</string>
+    <string name="account_status_public_or_private">Account Status: Public or Private</string>
+    <string name="age_preference_between">Age preference between</string>
+    <string name="min">Min</string>
+    <string name="and">and</string>
+    <string name="max">Max</string>
+    <string name="update">UPDATE</string>
+    <string name="genderId">Male, Female, Trans, Non-Binary</string>
+    <string name="id_as">Id As</string>
+    <string name="match_id_number">Match Id Number</string>
+    <string name="private_account">Private Account</string>
 
 
 </resources>

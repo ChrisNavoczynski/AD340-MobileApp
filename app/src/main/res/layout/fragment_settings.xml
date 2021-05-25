@@ -8,12 +8,195 @@
     tools:context=".ProfileFragment">
 
     <TextView
-        android:id="@+id/future_settings"
+        android:id="@+id/tv_setting_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp15_marg"
+        android:layout_marginTop="@dimen/dp60_marg"
+        android:layout_marginBottom="@dimen/dp20_marg"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/update_your_profile"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="@dimen/sp30_text" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/settings_will_go_here"
-        android:textSize="@dimen/sp30_text"
+        android:id="@+id/reminderText"
+        android:layout_below="@id/tv_setting_header"
+        android:layout_marginStart="@dimen/dp20_marg"
+        android:text="@string/new_matches_reminder"
         android:textColor="@color/white"
-        android:layout_centerInParent="true" />
+        android:textSize="@dimen/sp20_text"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/reminderTime"
+        android:spinnerMode="dropdown"
+        android:entries="@array/reminder_time"
+        android:layout_width="135dp"
+        android:layout_height="@dimen/form_h"
+        android:layout_marginLeft="@dimen/dp20_marg"
+        android:layout_marginRight="@dimen/dp20_marg"
+        android:layout_marginBottom="@dimen/dp20_marg"
+        android:layout_toEndOf="@id/reminderText"
+        android:layout_below="@id/tv_setting_header"
+        android:background="@drawable/et_custom"
+        android:fontFamily="sans-serif"
+        android:padding="@dimen/dp15_pad"
+        android:textSize="@dimen/sp17_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchText"
+        android:layout_below="@id/reminderTime"
+        android:layout_marginStart="@dimen/dp20_marg"
+        android:text="@string/search_within"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp20_text"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/searchMiles"
+        android:spinnerMode="dropdown"
+        android:entries="@array/miles_search"
+        android:layout_width="@dimen/dp150_marg"
+        android:layout_height="@dimen/form_h"
+        android:layout_marginStart="@dimen/dp20_marg"
+        android:layout_marginEnd="@dimen/dp10_marg"
+        android:layout_marginBottom="@dimen/dp20_marg"
+        android:layout_below="@id/reminderTime"
+        android:layout_toEndOf="@id/searchText"
+        android:background="@drawable/et_custom"
+        android:textSize="@dimen/sp17_text"
+        android:fontFamily="sans-serif"
+        android:padding="@dimen/dp15_pad" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/milesText"
+        android:layout_below="@id/reminderTime"
+        android:layout_toEndOf="@id/searchMiles"
+        android:layout_marginStart="@dimen/dp10_marg"
+        android:text="@string/miles"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp20_text"
+        android:textStyle="bold"/>
+
+    <CheckBox
+        android:id="@+id/accountStatus"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_h"
+        android:layout_marginLeft="@dimen/dp20_marg"
+        android:layout_marginRight="@dimen/dp20_marg"
+        android:layout_marginBottom="@dimen/dp20_marg"
+        android:layout_below="@id/searchMiles"
+        android:background="@drawable/et_custom"
+        android:fontFamily="sans-serif"
+        android:text="@string/private_account"
+        android:padding="@dimen/dp15_pad"
+        android:textSize="@dimen/sp17_text" />
+
+    <TextView
+        android:layout_width="@dimen/dp150_marg"
+        android:layout_height="wrap_content"
+        android:id="@+id/agePrefText"
+        android:layout_below="@id/accountStatus"
+        android:layout_marginStart="@dimen/dp20_marg"
+        android:layout_marginBottom="@dimen/dp20_marg"
+        android:text="@string/age_preference_between"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp20_text"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/ageRangeMin"
+        android:layout_width="@dimen/dp80_marg"
+        android:layout_height="@dimen/form_h"
+        android:spinnerMode="dropdown"
+        android:entries="@array/age_bracket"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="@dimen/dp20_marg"
+        android:layout_toEndOf="@id/agePrefText"
+        android:layout_below="@id/accountStatus"
+        android:background="@drawable/et_custom"
+        android:fontFamily="sans-serif"
+        android:hint="@string/min"
+        android:padding="@dimen/dp15_pad"
+        android:textSize="@dimen/sp17_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/andText"
+        android:layout_below="@id/accountStatus"
+        android:layout_toEndOf="@id/ageRangeMin"
+        android:layout_marginStart="@dimen/dp5_marg"
+        android:text="@string/and"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp20_text"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/ageRangeMax"
+        android:spinnerMode="dropdown"
+        android:entries="@array/age_bracket"
+        android:layout_width="@dimen/dp80_marg"
+        android:layout_height="@dimen/form_h"
+        android:layout_marginStart="@dimen/dp5_marg"
+        android:layout_marginEnd="@dimen/dp20_marg"
+        android:layout_marginBottom="@dimen/dp20_marg"
+        android:layout_toEndOf="@id/andText"
+        android:layout_below="@id/accountStatus"
+        android:background="@drawable/et_custom"
+        android:fontFamily="sans-serif"
+        android:hint="@string/max"
+        android:padding="@dimen/dp15_pad"
+        android:textSize="@dimen/sp17_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/idAsText"
+        android:layout_below="@id/agePrefText"
+        android:layout_marginStart="@dimen/dp20_marg"
+        android:text="@string/id_as"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp20_text"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/genderId"
+        android:spinnerMode="dropdown"
+        android:entries="@array/select_gender"
+        android:layout_width="300dp"
+        android:layout_height="@dimen/form_h"
+        android:layout_marginStart="@dimen/dp20_marg"
+        android:layout_marginEnd="@dimen/dp10_marg"
+        android:layout_marginBottom="@dimen/dp20_marg"
+        android:layout_below="@id/ageRangeMin"
+        android:layout_toEndOf="@id/idAsText"
+        android:background="@drawable/et_custom"
+        android:textSize="@dimen/sp17_text"
+        android:fontFamily="sans-serif"
+        android:padding="@dimen/dp15_pad" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/genderId"
+        android:layout_marginStart="@dimen/dp20_marg"
+        android:layout_marginBottom="@dimen/dp20_marg"
+        android:background="@drawable/btn_custom"
+        android:text="@string/update"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp20_text"
+        android:textStyle="bold"
+        android:padding="@dimen/dp15_pad" />
 
 </RelativeLayout>

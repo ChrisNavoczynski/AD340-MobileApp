@@ -44,4 +44,5 @@
     <dimen name="dp4_marg">4dp</dimen>
     <dimen name="dp200_cardHgt">200dp</dimen>
     <dimen name="dp40_layout">40dp</dimen>
+    <dimen name="dp150_marg">150dp</dimen>
 </resources>
