@@ -82,7 +82,7 @@ public class SignInActivityTest {
         onView(allOf(withId(R.id.tv_setting_header))).check((matches(withText("Update Your Profile!"))));
 
         onView(withId(R.id.reminderTime)).perform(click());
-        onView(withText("12:00")).perform(click());
+        onView(withText("01:00")).perform(click());
         onView(withId(R.id.searchMiles)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("5")))
                 .perform(click());
@@ -97,7 +97,6 @@ public class SignInActivityTest {
         onView(withText("Female")).perform(click());
         onView(withId(R.id.updateButton)).perform(click());
     }
-
 
     @Test
     public void Constants() {
