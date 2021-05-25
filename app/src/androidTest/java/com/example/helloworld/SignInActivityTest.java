@@ -78,8 +78,6 @@ public class SignInActivityTest {
 
         onView(withId(R.id.nav_view))
                 .perform(NavigationViewActions.navigateTo(R.id.nav_settings));
-        Espresso.pressBack();
-        onView(isRoot()).perform(waitFor(1000));
 
         onView(allOf(withId(R.id.tv_setting_header))).check((matches(withText("Update Your Profile!"))));
 
