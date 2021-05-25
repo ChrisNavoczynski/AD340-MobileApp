@@ -76,7 +76,8 @@ public class MainActivityTest {
     public void fillForm() throws InterruptedException {
         onView(withId(R.id.et_name)).perform(typeText("Jasper Doggo"));
         onView(withId(R.id.btDatePick)).perform(scrollTo(), (click()));
-        onView(withClassName(Matchers.equalTo(android.widget.DatePicker.class.getName()))).perform(PickerActions.setDate(2000 , 3, 17));
+        onView(withClassName(Matchers.equalTo(android.widget.DatePicker.class.getName()))).perform(PickerActions.setDate(2000  , 3, 17));
+        onView(withText("OK")).perform(click());
         onView(withId(R.id.gender)).perform(click());
         onView(withText("Female")).perform(click());
         onView(withId(R.id.gendertwo)).perform(click());
