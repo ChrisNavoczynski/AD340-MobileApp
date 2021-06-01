@@ -145,15 +145,15 @@ public class MatchesFragment extends Fragment {
 
     public void getSelectedDistance() {
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        Float one = 1609.34f;
-        Float five = 8046.72f;
-        Float ten = 16093.44f;
-        Float fifteen = 2414.02f;
-        Float twenty = 3218.69f;
-        Float thirty = 4828.03f;
-        Float forty = 6437.38f;
-        Float fifty = 80467.2f;
-        Float hundred = 160934.4f;
+        Float one = Float.valueOf(1609.34f);
+        Float five = Float.valueOf(8046.72f);
+        Float ten = Float.valueOf(16093.44f);
+        Float fifteen = Float.valueOf (2414.02f);
+        Float twenty = Float.valueOf (3218.69f);
+        Float thirty = Float.valueOf(4828.03f);
+        Float forty = Float.valueOf (6437.38f);
+        Float fifty = Float.valueOf(80467.2f);
+        Float hundred = Float.valueOf(160934.4f);
 
         final Observer<List<User>> getUserObserver = (users -> {
             if (users == null || users.size() <= 0) {
