@@ -87,11 +87,11 @@ public class SignInActivityTest {
         onView(withId(R.id.reminderTime)).perform(click());
         onView(withText("01:00")).perform(click());
         onView(withId(R.id.searchMiles)).perform(click());
-        onData(allOf(is(instanceOf(String.class)), is("5")))
+        onData(allOf(is(instanceOf(String.class)), is("10")))
                 .perform(click());
         onView(withId(R.id.accountStatus)).perform(click());
         onView(withId(R.id.ageRangeMin)).perform(click());
-        onData(allOf(is(instanceOf(String.class)), is("35")))
+        onData(allOf(is(instanceOf(String.class)), is("20")))
                 .perform(click());
         onView(withId(R.id.ageRangeMax)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("40")))
@@ -101,7 +101,7 @@ public class SignInActivityTest {
         onView(withId(R.id.updateButton)).perform(click());
     }
 
-/*    @Test
+    @Test
     public void testMatches() {
         onView(isRoot()).perform(waitFor(1000));
         // Open Drawer to click on navigation.
@@ -116,7 +116,7 @@ public class SignInActivityTest {
 
         onView(withText(R.string.message)).inRoot(new TestUtils.ToastMatcher())
                 .check(matches(isDisplayed()));
-    }*/
+    }
 
     @Test
     public void Constants() {
