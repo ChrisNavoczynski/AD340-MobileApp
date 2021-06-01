@@ -40,14 +40,16 @@ public class MatchesModel {
         listeners.add(listener);
     }
 
-/*    public void updateMatchesById(Matches match) {
+    public void updateMatchesById(Matches match) {
         DocumentReference matchRef = db.collection("matches").document(match.uid);
         Map<String, Object> data = new HashMap<>();
         data.put("name", match.name);
         data.put("imageUrl", match.imageUrl);
         data.put("liked", match.liked);
+        data.put("lat", match.lat);
+        data.put("longitude", match.longitude);
         matchRef.update(data);
-    }*/
+    }
 
     public void clear() {
         listeners.forEach(ListenerRegistration::remove);

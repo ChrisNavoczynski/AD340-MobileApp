@@ -12,22 +12,28 @@ public class Matches implements Parcelable {
     public String name;
     public String imageUrl;
     public boolean liked;
+    public String lat;
+    public String longitude;
     public String uid;
 
     public Matches() {
         //Default
     }
 
-    public Matches(String mName, String imageUrl, boolean liked) {
+    public Matches(String mName, String imageUrl, boolean liked, String lat, String longitude) {
         this.name = mName;
         this.imageUrl = imageUrl;
         this.liked = liked;
+        this.lat = lat;
+        this.longitude = longitude;
     }
 
     public Matches(Parcel in) {
         name = in.readString();
         imageUrl = in.readString();
         liked = in.readByte() != 0;
+        lat = in.readString();
+        longitude = in.readString();
     }
 
     public static final Creator<Matches> CREATOR = new Creator<Matches>() {
@@ -52,5 +58,7 @@ public class Matches implements Parcelable {
         parcel.writeString(name);
         parcel.writeByte((byte) (liked ? 1 : 0));
         parcel.writeString(imageUrl);
+        parcel.writeString(lat);
+        parcel.writeString(longitude);
     }
 }

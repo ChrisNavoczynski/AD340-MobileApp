@@ -130,6 +130,10 @@
     <string name="id_as">Id As</string>
     <string name="match_id_number">Match Id Number</string>
     <string name="private_account">Private Account</string>
+    <string name="message_for_location">Current Location setting is Off. Enable Location to utilize app</string>
+    <string name="setting_location">Location Setting</string>
+    <string name="location_cancel">Cancel Location</string>
+    <string name="location_enable">Enable Location</string>
 
 
 </resources>
