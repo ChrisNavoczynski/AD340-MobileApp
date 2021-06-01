@@ -103,13 +103,10 @@ public class SignInActivityTest {
 
     @Test
     public void testMatches() {
-        onView(isRoot()).perform(waitFor(1000));
         // Open Drawer to click on navigation.
         onView(withId(R.id.drawer_layout)).perform(DrawerActions.open()); // Open Drawer
-        onView(isRoot()).perform(waitFor(1000));
         onView(withText(R.string.matches))
                 .perform(click()); // Select nav button in nav drawer
-        onView(isRoot()).perform(waitFor(1000));
         //onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.scrollToPosition(1));
         //onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.actionOnItemAtPosition(1, new TestUtils.ClickOnLikeButton()));
         //onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.actionOnItemAtPosition(1, new TestUtils.ClickOnLikeButton()));
