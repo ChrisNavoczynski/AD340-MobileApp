@@ -148,10 +148,10 @@ public class MatchesFragment extends Fragment {
         Float one = Float.valueOf(1609.34f);
         Float five = Float.valueOf(8046.72f);
         Float ten = Float.valueOf(16093.44f);
-        Float fifteen = Float.valueOf (2414.02f);
-        Float twenty = Float.valueOf (3218.69f);
-        Float thirty = Float.valueOf(4828.03f);
-        Float forty = Float.valueOf (6437.38f);
+        Float fifteen = Float.valueOf (24140.16f);
+        Float twenty = Float.valueOf (32186.88f);
+        Float thirty = Float.valueOf(48280.32f);
+        Float forty = Float.valueOf (64373.76f);
         Float fifty = Float.valueOf(80467.2f);
         Float hundred = Float.valueOf(160934.4f);
 
