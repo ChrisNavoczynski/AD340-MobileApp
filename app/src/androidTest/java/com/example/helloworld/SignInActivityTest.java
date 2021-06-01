@@ -1,20 +1,25 @@
 package com.example.helloworld;
 
+import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
 import android.view.Gravity;
 
-import androidx.test.espresso.Espresso;
 import androidx.test.espresso.contrib.DrawerActions;
 import androidx.test.espresso.contrib.NavigationViewActions;
 import androidx.test.espresso.contrib.RecyclerViewActions;
+import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
@@ -27,7 +32,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static com.example.helloworld.TestUtils.waitFor;
-import static org.hamcrest.Matchers.allOf;
+
 
 
 @RunWith(AndroidJUnit4.class)
@@ -101,15 +106,33 @@ public class SignInActivityTest {
         onView(withId(R.id.updateButton)).perform(click());
     }
 
+    @Before
+    public void grantPermission() throws InterruptedException {
+        getInstrumentation().getUiAutomation().executeShellCommand(" set " + InstrumentationRegistry.getInstrumentation().getTargetContext().getPackageName() + " android:mock_location allow");
+        Thread.sleep(1000);
+
+    }
+
     @Test
-    public void testMatches() {
-        onView(isRoot()).perform(waitFor(1000));
+    public void testMatches() throws InterruptedException {
+
+        LocationManager lm = (LocationManager) getInstrumentation().getTargetContext().getSystemService(Context.LOCATION_SERVICE);
+
+        lm.addTestProvider(LocationManager.GPS_PROVIDER, false, false,
+                false, false, false, false, false, 0, 5);
+        lm.setTestProviderEnabled(LocationManager.GPS_PROVIDER, true);
+        Location mockLocation = new Location(LocationManager.GPS_PROVIDER); // a string
+            mockLocation.setLatitude(47.6186125996);  // double
+            mockLocation.setLongitude(-122.215187758);
+
+        //onView(isRoot()).perform(waitFor(1000));
         // Open Drawer to click on navigation.
         onView(withId(R.id.drawer_layout)).perform(DrawerActions.open()); // Open Drawer
-        onView(isRoot()).perform(waitFor(1000));
+        //onView(isRoot()).perform(waitFor(1000));
         onView(withText(R.string.matches))
                 .perform(click()); // Select nav button in nav drawer
-        onView(isRoot()).perform(waitFor(1000));
+        //onView(isRoot()).perform(waitFor(1000));
+        Thread.sleep(5000);
         onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.scrollToPosition(0));
         onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.actionOnItemAtPosition(0, new TestUtils.ClickOnLikeButton()));
         onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.actionOnItemAtPosition(0, new TestUtils.ClickOnLikeButton()));
