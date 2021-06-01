@@ -113,33 +113,23 @@ public class SignInActivityTest {
 
     }
 
-    @Test
+/*    @Test
     public void testMatches() throws InterruptedException {
 
-        LocationManager lm = (LocationManager) getInstrumentation().getTargetContext().getSystemService(Context.LOCATION_SERVICE);
-
-        lm.addTestProvider(LocationManager.GPS_PROVIDER, false, false,
-                false, false, false, false, false, 0, 5);
-        lm.setTestProviderEnabled(LocationManager.GPS_PROVIDER, true);
-        Location mockLocation = new Location(LocationManager.GPS_PROVIDER); // a string
-            mockLocation.setLatitude(47.6186125996);  // double
-            mockLocation.setLongitude(-122.215187758);
-
-        //onView(isRoot()).perform(waitFor(1000));
+        onView(isRoot()).perform(waitFor(1000));
         // Open Drawer to click on navigation.
         onView(withId(R.id.drawer_layout)).perform(DrawerActions.open()); // Open Drawer
-        //onView(isRoot()).perform(waitFor(1000));
+        onView(isRoot()).perform(waitFor(1000));
         onView(withText(R.string.matches))
                 .perform(click()); // Select nav button in nav drawer
-        //onView(isRoot()).perform(waitFor(1000));
-        Thread.sleep(5000);
+        onView(isRoot()).perform(waitFor(1000));
         onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.scrollToPosition(0));
         onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.actionOnItemAtPosition(0, new TestUtils.ClickOnLikeButton()));
         onView(withId(R.id.recyclerview)).perform(RecyclerViewActions.actionOnItemAtPosition(0, new TestUtils.ClickOnLikeButton()));
 
         onView(withText(R.string.message)).inRoot(new TestUtils.ToastMatcher())
                 .check(matches(isDisplayed()));
-    }
+    }*/
 
     @Test
     public void Constants() {
